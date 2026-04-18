@@ -385,8 +385,8 @@ def ufmt_stdin(
             pattern = re.compile(r"^((?:---|\+\+\+)\s+).+$", re.M)
             result.diff = pattern.sub(replacement, result.diff)
 
-        # write to stdout if not check/diff mode
-        if not dry_run:
+        # write to stdout if not check/diff mode and no error occurred
+        if not dry_run and not result.error:
             content = temp_path.read_bytes()
             sys.stdout.buffer.write(content)
             sys.stdout.buffer.flush()

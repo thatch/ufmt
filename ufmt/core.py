@@ -335,6 +335,7 @@ def ufmt_stdin(
     usort_config_factory: Optional[UsortConfigFactory] = None,
     pre_processor: Optional[Processor] = None,
     post_processor: Optional[Processor] = None,
+    root: Optional[Path] = None,
 ) -> Result:
     """
     Wrapper around :func:`ufmt_file` for formatting content from STDIN.
@@ -351,7 +352,7 @@ def ufmt_stdin(
     See :func:`ufmt_file` for details on parameters, config factories,
     and post processors. All parameters are passed through to :func:`ufmt_file`.
     """
-    ufmt_config = (ufmt_config_factory or load_config)(path, None)
+    ufmt_config = (ufmt_config_factory or load_config)(path, root)
     black_config = (black_config_factory or make_black_config)(path)
     usort_config = (usort_config_factory or UsortConfig.find)(path)
 
@@ -455,6 +456,7 @@ def ufmt_paths(
             usort_config_factory=usort_config_factory,
             pre_processor=pre_processor,
             post_processor=post_processor,
+            root=root,
         )
         return
 

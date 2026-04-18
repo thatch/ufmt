@@ -727,6 +727,7 @@ class CoreTest(TestCase):
                 usort_config_factory=None,
                 pre_processor=None,
                 post_processor=None,
+                root=None,
             )
 
         with self.subTest("path name"):
@@ -741,6 +742,7 @@ class CoreTest(TestCase):
                 usort_config_factory=None,
                 pre_processor=None,
                 post_processor=None,
+                root=None,
             )
 
         with self.subTest("extra args"):

@@ -426,7 +426,7 @@ def ufmt_paths(
     A second path argument may be given, which represents the original content's true
     path name, and will be used when printing status messages, diffs, or errors.
     Any further path names will result in a runtime error.  If a path is not
-    explicitly provided, it falls back to the --root and then to the working dir.
+    explicitly provided, it falls back to ``--root`` and then to the working dir.
 
     See :func:`ufmt_file` for details on parameters, config factories,
     and post processors. All parameters are passed through to :func:`ufmt_file`.
